@@ -31,7 +31,7 @@ for i in range(cantidad):
         "zona":zona
     }
     lista.append((nombre,paquetes,zona))
-    quick_sort(paquetes)
+quick_sort(lista)
 mostrar(lista)
 
 buscar=input("Ingrese al repartidor que desea buscar: ")
