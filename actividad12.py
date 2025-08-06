@@ -1,3 +1,5 @@
+diccionario={}
+lista=[]
 def quick_sort(lista):
     if len(lista) <=1:
         return lista
@@ -10,10 +12,15 @@ def quick_sort(lista):
 def busqueda(lista,buscando):
     for elementos in lista:
        if elementos == buscando:
-        return elementos
+            return elementos
+       else:
+           return print("No esta el empleado")
 
-diccionario={}
-lista=[]
+def mostrar(lista):
+    for elementos in lista:
+        print(elementos)
+
+
 cantidad= int(input("Ingrese la cantidad de personas que desea registrar: "))
 for i in range(cantidad):
     nombre=input("Ingrese el nombre del repartidor: ")
@@ -23,7 +30,10 @@ for i in range(cantidad):
         "paquetes":paquetes,
         "zona":zona
     }
-    empleados2=quick_sort(diccionario[paquetes])
-    empleados1=nombre,paquetes,zona
-    lista.append(empleados1)
+    lista.append((nombre,paquetes,zona))
+    quick_sort(paquetes)
+mostrar(lista)
 
+buscar=input("Ingrese al repartidor que desea buscar: ")
+encontrado=busqueda(lista,buscar)
+print(encontrado)
