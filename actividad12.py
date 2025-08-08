@@ -30,5 +30,12 @@ for i in range(cantidad):
         "zona":zona
     }
 lista_ordenada = quick_sort(list(diccionario.items()))
-
 mostrar(lista_ordenada)
+
+buscar = input("\nIngrese el nombre del repartidor que desea buscar: ")
+resultado = buscar_repartidor(diccionario, buscar)
+if resultado:
+    nombre, datos = resultado
+    print(f"\nRepartidor encontrado:\nNombre: {nombre}, Paquetes: {datos['paquetes']}, Zona: {datos['zona']}")
+else:
+    print("\nEl repartidor no está registrado.")
